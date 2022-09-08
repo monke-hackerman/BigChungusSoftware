@@ -1,0 +1,59 @@
+.left{
+    float: left;
+    width: 80%;
+}
+.right{
+    float: right;
+    width: 20%;
+}
+.snore{
+    background-color: rgb(199, 127, 64);
+    width: 50%;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 25px;
+    font-weight: bold;
+}
+.clickingchungr{
+    position: relative;
+    transition: all .2s ease-in-out;
+}
+.clickingchungr img:hover{transform: scale(1.20);}
+.clickingchungr img:active{transform: scale(0.99);}
+
+.shop{
+    background-color: #b5b5b5;
+    transition: all .2s ease-in-out;
+    border-radius: 10px;
+    width: 100%;
+    margin: 10px 0px 10px 0px;
+}
+.shop:hover{
+    background-color: #e2f5be;
+    transition: all .2s ease-in-out;
+    transform: scale(1.05);
+}
+.shop #image{
+    width: 25%;
+}
+.shop img{
+    height: 64px;
+    width: 64px;
+}
+.shop #namecost p {
+    margin: 0px;
+    width: 60%;
+}
+.shop #namecost p:first-of-type{
+    font-size: 24px;
+    font-weight: bold;
+}
+.shop #amount{
+    font-size: 48px;
+    color: #595959;
+    font-family: roboto;
+    width: 15%;
+}
+.unselceteble{
+    user-select: none;
+}

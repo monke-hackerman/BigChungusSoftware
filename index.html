@@ -1,0 +1,118 @@
+<html>
+    <head>
+        <title>big chungus software</title>
+        <link rel="stylesheet" href="chungusstyle.css">
+    </head>
+    <body>
+        <div class="left">
+            <center>
+                <div class="snore unselceteble">
+                    <span id="score">0</span> chungus coins<br>
+                    <span id="ccps">0</span> chungus coins per second<br>
+                </div>
+                <div class="clickingchungr unselceteble">
+                    <img src="img/chungr.png" alt="big chungus" height="256px" width="256px" onclick="addscore(1)">
+                </div>
+            </center>
+        </div>
+        <div class="right unselceteble">
+            <table class="shop unselceteble" onclick="getTskin()">
+                <tr>
+                    <td id = "img"><img src="img/tpose.jpeg" alt="tposing chungus"></td>
+                    <td id = "namecost">
+                        <p>Tpose</p>
+                        <p><span id="Tskincost">20</span> chungus coins</p>
+                    </td>
+                    <td id="amount"><span id="Tskins">0</span></td>
+                </tr>
+            </table>
+            <table class="shop unselceteble" onclick="getUskin()">
+                <tr>
+                    <td id = "img"><img src="img/uganda.png" alt="Ugandan chungus"></td>
+                    <td id = "namecost">
+                        <p>Ugandan</p>
+                        <p><span id="Uskincost">100</span> chungus coins</p>
+                    </td>
+                    <td id="amount"><span id="Uskins">0</span></td>
+                </tr>
+            </table>
+            <table class="shop unselceteble" onclick="getBITskin()">
+                <tr>
+                    <td id = "img"><img src="img/Bitminer chung.png" alt="bitcoinminer chungus"></td>
+                    <td id = "namecost">
+                        <p>miner</p>
+                        <p><span id="BITskincost">500</span> chungus coins</p>
+                    </td>
+                    <td id="amount"><span id="BITskins">0</span></td>
+                </tr>
+            </table>
+        </div>
+        <script>
+            let score = 0;
+
+            let Tskincost = 20;
+            let Tskins = 0;
+            let Uskincost = 100;
+            let Uskins = 0;
+            let BITskincost = 500;
+            let BITskins = 0;
+            
+            function getTskin(){
+                if (score >= Tskincost){
+                    score = score - Tskincost;
+                    Tskins = Tskins + 1;
+                    Tskincost = Math.round(Tskincost * 1.20);
+
+                    document.getElementById("score").innerHTML = score;
+                    document.getElementById("Tskins").innerHTML = Tskins;
+                    document.getElementById("Tskincost").innerHTML = Tskincost;
+                }
+            }
+            function getUskin(){
+                if (score >= Uskincost){
+                    score = score - Uskincost;
+                    Uskins = Uskins + 1;
+                    Uskincost = Math.round(Uskincost * 1.20);
+
+                    document.getElementById("score").innerHTML = score;
+                    document.getElementById("Uskins").innerHTML = Uskins;
+                    document.getElementById("Uskincost").innerHTML = Uskincost;
+                    updateSPS();
+                }
+            }
+
+            function getBITskin(){
+                if (score >= BITskincost){
+                    score = score - BITskincost;
+                    BITskins = BITskins + 1;
+                    BITskincost = Math.round(BITskincost * 1.20);
+
+                    document.getElementById("score").innerHTML = score;
+                    document.getElementById("BITskins").innerHTML = BITskins;
+                    document.getElementById("BITskincost").innerHTML = BITskincost;
+                    updateSPS();
+                }
+            }
+
+            function addscore(amount){
+                score = score + amount + ((Tskins >= 1) ? Math.round((Tskins * 0.1)) : 0);
+                document.getElementById("score").innerHTML = score;
+            }
+            //sps = score per second
+            //ccps = chunguscoins per second
+            function updateSPS() {
+                scorepersecond = Uskins + BITskins * 5;
+                document.getElementById("ccps").innerHTML = scorepersecond;
+            }
+
+            setInterval(function(){
+                score = score + Uskins;
+                score = score + BITskins * 5;
+                
+
+                document.getElementById("score").innerHTML = score;
+                document.title = score + " cc - big chungus software";
+            }, 1000);
+        </script>
+    </body>
+</html>
